@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="painel" prefHeight="550" prefWidth="800" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unoeste.fipp.photoshopfx.ImageController">
+    <center>
+        <ScrollPane fitToHeight="false" fitToWidth="false" pannable="true">
+            <content>
+                <ImageView fx:id="imageView" pickOnBounds="true" preserveRatio="false" />
+            </content>
+            <contextMenu>
+                <ContextMenu>
+                    <items>
+                    <MenuItem text="Tons de cinza" onAction="#tonsCinza" />
+                    <MenuItem text="Preto e branco" onAction="#pretoBranco" />
+                    <MenuItem text="Negativo" onAction="#negativo" />
+                    <MenuItem text="Espelhar horizontalmente" onAction="#espelharHorizontal" />
+                    <MenuItem text="Espelhar verticalmente" onAction="#espelharVertical" />
+                    <MenuItem text="Detectar bordas" onAction="#detectarBordas" />
+                    </items>
+                </ContextMenu>
+            </contextMenu>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 6 12; -fx-background-color: #f3f4f6;">
+            <Label text="Dimensões:" />
+            <Label fx:id="lbDimImagem" text="0 × 0 px" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label text="Brilho:" />
+            <Slider fx:id="slBrilho" min="-100" max="100" value="0" prefWidth="130" />
+            <Label text="Zoom:" />
+            <Slider fx:id="slZoom" min="0" max="100" value="100" prefWidth="145" />
+            <Label fx:id="lbZoom" text="100%" minWidth="42" />
+        </HBox>
+    </bottom>
+</BorderPane>

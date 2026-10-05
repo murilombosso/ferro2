@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="painel" prefHeight="600" prefWidth="900" xmlns="http://javafx.com/javafx/24" xmlns:fx="http://javafx.com/fxml/1" fx:controller="unoeste.fipp.photoshopfx.MainController">
+    <top>
+        <VBox>
+            <MenuBar>
+                <Menu text="_Arquivo">
+                    <MenuItem text="_Abrir..." onAction="#onAbrir" accelerator="Shortcut+O" />
+                    <MenuItem fx:id="miSalvar" text="_Salvar" onAction="#onSalvar" accelerator="Shortcut+S" />
+                    <MenuItem fx:id="miSalvarComo" text="Salvar _como..." onAction="#onSalvarComo" accelerator="Shortcut+Shift+S" />
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="miFechar" text="_Fechar imagem" onAction="#onFechar" accelerator="Shortcut+W" />
+                    <MenuItem text="_Sair" onAction="#onSair" />
+                </Menu>
+                <Menu text="_Imagem">
+                    <MenuItem fx:id="miCinza" text="Tons de cinza" onAction="#onTonsCinza" />
+                    <MenuItem fx:id="miPretoBranco" text="Preto e branco" onAction="#onPretoBranco" />
+                    <MenuItem fx:id="miNegativo" text="Negativo" onAction="#onNegativo" />
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="miEspelharH" text="Espelhar horizontalmente" onAction="#onEspelharHorizontal" />
+                    <MenuItem fx:id="miEspelharV" text="Espelhar verticalmente" onAction="#onEspelharVertical" />
+                    <MenuItem fx:id="miRecarregar" text="Recarregar imagem original" onAction="#onRecarregar" />
+                    <SeparatorMenuItem />
+                    <MenuItem fx:id="miBordas" text="Detectar bordas (ImageJ)" onAction="#onDetectarBordas" />
+                    <MenuItem fx:id="miSuavizar" text="Suavizar... (ImageJ)" onAction="#onSuavizar" />
+                    <MenuItem fx:id="miNitidez" text="Nitidez (ImageJ)" onAction="#onNitidez" />
+                    <MenuItem fx:id="miMediana" text="Filtro mediano (ImageJ)" onAction="#onMediana" />
+                    <MenuItem fx:id="miBinarizar" text="Limiar automático (ImageJ)" onAction="#onBinarizar" />
+                    <MenuItem fx:id="miGama" text="Ajustar gama... (ImageJ)" onAction="#onGama" />
+                    <MenuItem fx:id="miBrilho" text="Brilho..." onAction="#onBrilho" />
+                </Menu>
+                <Menu text="_Visualizar">
+                    <MenuItem fx:id="miDesenhos" text="Ferramentas de desenho" onAction="#onVisualizarDesenho" />
+                    <MenuItem fx:id="miInformacoes" text="Informações da imagem" onAction="#onInformacoes" />
+                </Menu>
+                <Menu text="_Ajuda">
+                    <MenuItem text="Sobre" onAction="#onSobre" />
+                </Menu>
+            </MenuBar>
+            <ToolBar fx:id="barraFerramentas" />
+        </VBox>
+    </top>
+    <center>
+        <StackPane style="-fx-background-color: #eef1f5;">
+            <Label text="Abra uma imagem para começar" style="-fx-text-fill: #64748b; -fx-font-size: 18px;" />
+        </StackPane>
+    </center>
+    <right>
+        <VBox fx:id="painelDesenho" alignment="TOP_CENTER" spacing="12" prefWidth="130" visible="false" style="-fx-background-color: #e5e7eb; -fx-padding: 16;">
+            <Label text="Desenho" style="-fx-font-weight: bold;" />
+            <Button fx:id="btCirculo" text="Círculo" contentDisplay="TOP" onAction="#onCirculo" maxWidth="Infinity" />
+            <Button fx:id="btRetangulo" text="Retângulo" contentDisplay="TOP" onAction="#onRetangulo" maxWidth="Infinity" />
+            <Button fx:id="btCaneta" text="Caneta" contentDisplay="TOP" onAction="#onDesenhar" maxWidth="Infinity" />
+            <Button text="Nenhuma" onAction="#onSemFerramenta" maxWidth="Infinity" />
+        </VBox>
+    </right>
+</BorderPane>
